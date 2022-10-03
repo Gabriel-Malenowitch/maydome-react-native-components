@@ -4,13 +4,15 @@ export interface DefaultConfig {
     padding: number
     borderRadius: number
     borderWidth: number
+    minHeight: number
 }
 
 const defaultConfig: DefaultConfig = {
     margin: 0,
     padding: 0,
     borderRadius: 0,
-    borderWidth: 0
+    borderWidth: 0,
+    minHeight: 70
 }
 
 export interface ColorConfig {
