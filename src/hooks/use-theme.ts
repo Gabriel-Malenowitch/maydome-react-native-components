@@ -1,7 +1,7 @@
 import { useContext } from "react"
-import { ThemeContext, Theme } from 'styled-components'
+import { ThemeContext, DefaultTheme } from 'styled-components'
 
-export const useTheme = (): Theme => {
+export const useTheme = (): DefaultTheme => {
     const theme = useContext(ThemeContext)
     return theme
 }
