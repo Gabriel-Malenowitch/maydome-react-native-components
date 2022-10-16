@@ -1,7 +1,6 @@
 import { forwardRef, ReactElement } from "react";
-import { StyleSheet, TextProps, Text } from 'react-native'
+import { TextProps, Text } from 'react-native'
 import styled from "styled-components/native";
-import { useTheme } from "../../hooks";
 import { Theme } from "../../styles";
 
 
