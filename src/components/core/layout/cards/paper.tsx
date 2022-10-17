@@ -19,6 +19,13 @@ interface PaperProps {
         pr?: number
         pb?: number
 
+        b?: number
+        bt?: number
+        bl?: number
+        br?: number
+        bb?: number
+        borderRadius?: number
+
         direction?: 'horizontal' | 'vertical'
         justifyContent?: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly'
         alignItems?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline'
@@ -35,7 +42,13 @@ export const StyledPaper = styled.View<Omit<StyledPaperProps, 'children'>>`
     box-shadow: ${props => props.theme.inUse.pallet.shadowColor} 0 1px 20px;
     elevation: ${props => props.sx?.elevation ?? 1};
 
-    border-radius: ${props => props.theme.defaultConfig.borderRadius}px;
+    border-radius: ${props => props.sx?.borderRadius ?? props.theme.defaultConfig.borderRadius}px;
+    border-top-width: ${props => props.sx?.b ? props.sx?.b * 8 : (props.sx?.bt ?? 0) * 8}px;
+    border-left-width: ${props => props.sx?.b ? props.sx?.b * 8 : (props.sx?.bl ?? 0) * 8}px;
+    border-right-width: ${props => props.sx?.b ? props.sx?.b * 8 : (props.sx?.br ?? 0) * 8}px;
+    border-bottom-width: ${props => props.sx?.m ? props.sx?.m * 8 : (props.sx?.bb ?? 0) * 8}px;
+    border-color: ${props => props.theme.inUse.pallet.borderColor};
+
     
     margin-top: ${props => props.sx?.m ? props.sx?.m * 8 : (props.sx?.mt ?? 0) * 8}px;
     margin-left: ${props => props.sx?.m ? props.sx?.m * 8 : (props.sx?.ml ?? 0) * 8}px;

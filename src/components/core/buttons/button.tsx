@@ -7,7 +7,7 @@ import { useTheme } from "../../../hooks";
 import { Loading } from "../../animations";
 import styled from 'styled-components/native' 
 import { ColorTypes } from "../../../styles";
-import { Typography } from "../text/typography";
+import { Typography } from "../fields/typography";
 
 export interface ButtonProps extends Omit<TouchableNativeFeedbackProps, 'disabled'> {
     isLoading?: boolean

@@ -1,10 +1,10 @@
-import React, { ReactNode } from "react"
-import { StyleSheet } from "react-native"
+import React, { ReactNode, forwardRef } from "react"
+import { StyleSheet, View, ViewProps } from "react-native"
 import { StyledView } from "./styled-view"
 import { ViewWithGap } from "./view-with-gap"
 import { chunk } from 'lodash'
 
-interface BoxProps {
+export interface BoxProps extends ViewProps {
     children?: ReactNode | ReactNode[]
     sx?: {
         gap?: number
@@ -24,6 +24,15 @@ interface BoxProps {
         pl?: number
         pr?: number
         pb?: number
+
+        b?: number
+        bt?: number
+        bl?: number
+        br?: number
+        bb?: number
+
+        width?: number
+        height?: number
     }
 }
 
@@ -33,7 +42,7 @@ const defaultSx: BoxProps['sx'] = {
     direction: 'vertical',
 }
 
-export const Box = (props: BoxProps) => {
+export const Box = forwardRef<View, BoxProps>((props: BoxProps, ref) => {
     const { children } = props
     const { gap = 0, columns = 0, direction = 'vertical', ...rest } = props.sx ?? defaultSx
 
@@ -41,7 +50,7 @@ export const Box = (props: BoxProps) => {
 
     if(!Array.isArray(children)) {
         return (
-            <StyledView customTheme={rest}>
+            <StyledView customTheme={rest} ref={ref}>
                 {children}
             </StyledView>
         )
@@ -51,7 +60,7 @@ export const Box = (props: BoxProps) => {
     if(columns){
         const childrenMatrix = chunk(children, columns)
         return (
-            <StyledView customTheme={rest}>
+            <StyledView customTheme={rest} ref={ref}>
                 <ViewWithGap direction='vertical' gap={gap} sx={rest}>
                     {childrenMatrix.map((childrenList, index) => (
                         <ViewWithGap direction='horizontal' gap={gap} key={index} sx={rest}>
@@ -67,8 +76,8 @@ export const Box = (props: BoxProps) => {
 
     // Return simples array children with custom gap
     return (
-        <StyledView customTheme={rest}>
+        <StyledView customTheme={rest} ref={ref}>
             <ViewWithGap direction={direction} gap={gap} sx={rest}>{children}</ViewWithGap>
         </StyledView>
     )
-}
+})
