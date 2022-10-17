@@ -92,6 +92,6 @@ export const theme: Theme = {
     defaultConfig,
     light,
     night,
-    inUse: night,
+    inUse: light,
     defaultProps
 }

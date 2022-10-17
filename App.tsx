@@ -1,18 +1,30 @@
 import React from "react"
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
+import { View, Text } from 'react-native';
 import { ThemeProvider } from 'styled-components'
 import { theme } from "./src/styles/theme";
-import { NoStyledButton as Button } from './src/components/core/button'
+import { Button } from './src/components/core/buttons/button'
+import { timedPromise } from "./src/test/utils/timed-promise";
+import { Box } from "./src/components/core/layout/box/box";
+import { Typography } from "./src/components/core/text/typography";
 
 export default function App() {
+  const handleSubmit = async () => await timedPromise(5000)
+
   return (
     <ThemeProvider theme={theme}>
       <View style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%'}}>
         <StatusBar style="auto" />
-        <Button title="Test" />
-
+        <Box sx={{columns: 2, gap: 2}}>
+          <Typography>test 1</Typography>
+          <Typography>test 2</Typography>
+          <Typography>test 3</Typography>
+          <Typography>test 4</Typography>
+          <Typography>test 5</Typography>
+          <Typography>test 6</Typography>
+          <Typography>test 7</Typography>
+        </Box>
       </View>
     </ThemeProvider>
-  );
+  )
 }
