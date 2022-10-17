@@ -8,6 +8,8 @@ export interface ColorConfig {
         info: string
         opacity: number
         textColor: string
+        shadowColor: string,
+        backgroundColor: string
     }
 }
 
@@ -49,7 +51,7 @@ const defaultProps = {
             h5: 24,
             h6: 12,
             span: 14,
-            inUse: 14
+            inUse: 24
         },
     }
 }
@@ -63,7 +65,9 @@ const light = {
         warning: '#C7BF78',
         info: '#78ABC7',
         opacity: 0.5,
-        textColor: '#2C272B'
+        textColor: '#2C272B',
+        shadowColor: '#2C272B',
+        backgroundColor: '#FFFFFF'
     }
 }
 
@@ -76,7 +80,9 @@ const night = {
         warning: '#AEA86B',
         info: '#6A92A9',
         opacity: 0.5,
-        textColor: '#EEEEEE'
+        textColor: '#EEEEEE',
+        shadowColor: '#443F43',
+        backgroundColor: '#1A1818'
     }
 }
 
