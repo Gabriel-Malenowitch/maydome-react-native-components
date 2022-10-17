@@ -34,14 +34,16 @@ export const StyledPaper = styled.View<Omit<StyledPaperProps, 'children'>>`
 
     box-shadow: ${props => props.theme.inUse.pallet.shadowColor} 0 1px 20px;
     elevation: ${props => props.sx?.elevation ?? 1};
+
+    border-radius: ${props => props.theme.defaultConfig.borderRadius}px;
     
     margin-top: ${props => props.sx?.m ? props.sx?.m * 8 : (props.sx?.mt ?? 0) * 8}px;
     margin-left: ${props => props.sx?.m ? props.sx?.m * 8 : (props.sx?.ml ?? 0) * 8}px;
     margin-right: ${props => props.sx?.m ? props.sx?.m * 8 : (props.sx?.mr ?? 0) * 8}px;
     margin-bottom: ${props => props.sx?.m ? props.sx?.m * 8 : (props.sx?.mb ?? 0) * 8}px;
 
-    padding-top: ${props => props.sx?.p ? props.sx?.p * 8 : (props.sx?.pt ?? 1) * 8}px;
-    padding-left: ${props => props.sx?.p ? props.sx?.p * 8 : (props.sx?.pl ?? 1) * 8}px;
-    padding-right: ${props => props.sx?.p ? props.sx?.p * 8 : (props.sx?.pr ?? 1) * 8}px;
-    padding-bottom: ${props => props.sx?.p ? props.sx?.p * 8 : (props.sx?.pb ?? 1) * 8}px;
+    padding-top: ${props => props.sx?.p ? props.sx?.p * 8 : (props.sx?.pt ?? 3) * 8}px;
+    padding-left: ${props => props.sx?.p ? props.sx?.p * 8 : (props.sx?.pl ?? 3) * 8}px;
+    padding-right: ${props => props.sx?.p ? props.sx?.p * 8 : (props.sx?.pr ?? 3) * 8}px;
+    padding-bottom: ${props => props.sx?.p ? props.sx?.p * 8 : (props.sx?.pb ?? 3) * 8}px;
 `

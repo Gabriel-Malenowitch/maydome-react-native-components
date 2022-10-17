@@ -51,7 +51,7 @@ const defaultProps = {
             h5: 24,
             h6: 12,
             span: 14,
-            inUse: 24
+            inUse: 14
         },
     }
 }
