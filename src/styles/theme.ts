@@ -10,6 +10,7 @@ export interface ColorConfig {
         textColor: string
         shadowColor: string,
         backgroundColor: string
+        borderColor: string
     }
 }
 
@@ -53,6 +54,10 @@ const defaultProps = {
             span: 14,
             inUse: 14
         },
+    },
+    paper: {
+        minWidth: 20,
+        elevation: 1
     }
 }
 
@@ -67,7 +72,8 @@ const light = {
         opacity: 0.5,
         textColor: '#2C272B',
         shadowColor: '#2C272B',
-        backgroundColor: '#FFFFFF'
+        backgroundColor: '#FFFFFF',
+        borderColor: '#2C272B',
     }
 }
 
@@ -82,7 +88,8 @@ const night = {
         opacity: 0.5,
         textColor: '#EEEEEE',
         shadowColor: '#443F43',
-        backgroundColor: '#1A1818'
+        backgroundColor: '#1A1818',
+        borderColor: '#443F43',
     }
 }
 

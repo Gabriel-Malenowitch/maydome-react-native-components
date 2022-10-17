@@ -3,15 +3,13 @@ import { TextProps, Text } from 'react-native'
 import styled from "styled-components/native";
 import { Theme } from "../../../styles";
 
-
-
 interface StyledTextProps {
     customTheme: {
         [Key in keyof Theme['defaultProps']['typography']]?: keyof Omit<Theme['defaultProps']['typography'][Key], 'inUse'>
     }
 }
 
-type TypographyProps = TextProps & StyledTextProps['customTheme']
+export type TypographyProps = TextProps & StyledTextProps['customTheme']
 
 const StyledText = styled.Text<StyledTextProps>`
     font-weight: ${props => props.customTheme.fontWeight ? props.theme.defaultProps.typography.fontWeight[props.customTheme.fontWeight] : props.theme.defaultProps.typography.fontWeight.inUse};
