@@ -1,7 +1,15 @@
-import AnimatedLottieView from 'lottie-react-native'
-import React from 'react'
-import { View } from 'react-native'
+import * as React from 'react'
+import { ActivityIndicator, ActivityIndicatorProps } from 'react-native'
+import Svg, { Path, SvgProps } from "react-native-svg"
+import { useTheme } from '../../hooks'
+import { ColorTypes } from '../../styles'
 
-const LoadingJson = require('../../assets/effects-icons/loading')
+interface LoadingProps extends Omit<ActivityIndicatorProps, 'color'> {
+	color?: ColorTypes
+}
 
-export const Loading = () => <AnimatedLottieView source={LoadingJson} autoPlay loop/>
+export const Loading = ({color, ...rest}: LoadingProps) => {
+	const { inUse: { pallet } } = useTheme()
+
+	return <ActivityIndicator {...rest} color={color ? pallet[color] : pallet.textColor} />
+}
