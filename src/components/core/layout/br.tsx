@@ -1,6 +1,6 @@
 import React, { forwardRef, ReactElement } from "react";
 import { Text, TextProps } from 'react-native'
-import { Typography } from "../text/typography";
+import { Typography } from "../fields/typography";
 
 export const Br = forwardRef<Text, TextProps>(
     (props, ref): ReactElement => 

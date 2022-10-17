@@ -4,7 +4,7 @@ import { StyledView } from "./styled-view"
 import { ViewWithGap } from "./view-with-gap"
 import { chunk } from 'lodash'
 
-interface BoxProps {
+export interface BoxProps {
     children?: ReactNode | ReactNode[]
     sx?: {
         gap?: number
